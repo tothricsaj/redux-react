@@ -2,24 +2,24 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { connect } from 'react-redux';
-import { startAction } from 'actions/startAction.js';
-import { stopAction } from 'actions/stopAction.js';
+import { startAction } from './actions/startAction.js';
+import { stopAction } from './actions/stopAction.js';
 
 
-function App() {
+function App(props) {
   return (
     <div className="App">
       <header className="App-header">
           <img 
               src={logo} 
               className= {
-                  "App-logo" + 
-                  (this.props.rotating ? "":"App-logo-paused")
+                  "App-logo " + 
+                  (props.rotating ? "":"App-logo-paused")
               } 
               alt="logo" 
               onClick={
-                  this.props.rotating ?
-                      this.props.stopAction : this.props.startAction
+                  props.rotating ?
+                      props.stopAction : props.startAction
               }
               />
         <p>
