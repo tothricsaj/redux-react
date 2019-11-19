@@ -1,4 +1,25 @@
 import React from 'react';
+import { createStore } from 'redux';
+
+const messageAction = (message) => {
+    return {
+        type: 'message',
+        msg: message
+    }
+}
+
+const messageReducer = (state, action) => {
+    switch(action.type) {
+        case 'message':
+            return {...state, ...{msg: action.msg}};
+        default:
+            return state;
+    }
+}
+
+export const configureStore = (state = {msg: ''}) => {
+    return createStore(messageReducer, state);
+}
 
 class App_2 extends React.Component {
     constructor(props) {
