@@ -5,7 +5,7 @@ import App from './App';
 import App_2 from './App_2';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
-import configureStore from './store.js';
+import { configureStore }from './App_2.js';
 
 /*
 ReactDOM.render(
@@ -18,7 +18,9 @@ ReactDOM.render(
 */
 
 ReactDOM.render(
-    <App_2 />,
+    <Provider store={configureStore()}>
+        <App_2 />
+    </Provider>,
     document.getElementById('root')
 );
 

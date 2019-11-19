@@ -57,7 +57,9 @@ class App_2 extends React.Component {
         let divStyle = {
             border: '1px solid white',
             padding: '5px',
-            color: 'white'
+            color: 'white',
+            marginTop: '20px',
+            cursor: 'pointer'
         }
 
         return (
@@ -66,7 +68,12 @@ class App_2 extends React.Component {
               <p className="shownText" style={pStyle}>{this.props.msg}</p>
               <h2>I am learning</h2>
               <input type="text" value={this.state.msg} onChange={this.handleChange} />
-              <div style={divStyle} onClick={this.props.messageAction(this.state.msg)}>Show the message</div>
+              <div 
+                  style={divStyle} 
+                  onClick={() => this.props.messageAction(this.state.msg)}
+              >
+                  Show the message
+              </div>
           </header>
         </div>
       );
